@@ -20,6 +20,63 @@ if(sw_min==999999||sh_min==999999){sw_min=800;sh_min=600;}
 swide=sw_min;shigh=sh_min;}
 </script>
 
+<style>
+.comment-info2 {clear: both; width: 100%; float: left; margin: 0 0 15px; }
+.comment-info2 .left {background: #dedede; padding: 3px 15px; border-radius: 100px; display: block; text-transform: uppercase; font: 400 12px Roboto;}
+.comment-info2 .right a {font: 500 12px Roboto,sans-serif; text-transform: uppercase; background: #212326; padding: 3px 15px; box-sizing: border-box; display: block; border-radius: 100px;}
+.comment-info2 .right a:hover {opacity: .8}
+ul.idbcomments{list-style:none;margin:0;padding:0}.idbcomments li{display:block;clear:both;overflow:hidden;list-style:none;border-bottom:0!important;word-break:break-all;padding:0 0 7px!important}.idbcomments li .avatarImage{float:left;margin-right:12px;position:relative;overflow:hidden}.idbcomments li img{border-radius:100%;position:relative;overflow:hidden;display:block;width:45px;height:45px}.idbcomments li a{font-weight:700}.idbcomments li span{color:#a5a3a3;display:block;background:rgba(0,0,0,.1);padding:10px;border-radius:100px}
+.idbcomments li span:hover{background:rgba(0,0,0,.2)}
+</style>
+<script type="text/javascript">
+//<![CDATA[
+// Recent Comments
+function idbcomments(a) {
+    var e;
+    e = '<ul class="idbcomments">';
+    for (var t = 0; numComments > t; t++) {
+        var r, o, n, i;
+        if (t == a.feed.entry.length) break;
+        e += "<li>";
+        for (var d = a.feed.entry[t], s = 0; s < d.link.length; s++) "alternate" == d.link[s].rel && (r = d.link[s].href);
+        for (var l = 0; l < d.author.length; l++) o = d.author[l].name.$t, n = d.author[l].gd$image.src;
+        n = -1 != n.indexOf("/s1600/") ? n.replace("/s1600/", "/s" + avatarSize + "-c/") : -1 != n.indexOf("/s220/") ? n.replace("/s220/", "/s" + avatarSize + "-c/") : -1 != n.indexOf("/s512-c/") && 0 != n.indexOf("") ? "" + n.replace("/s512-c/", "/s" + avatarSize + "-c/") : -1 != n.indexOf("blogblog.com/img/b16-rounded.gif") ? "//1.bp.blogspot.com/-7bkcAKdpGXI/UrbyQRqvSKI/AAAAAAAAFmI/oBv_yMeYnMQ/s" + avatarSize + "/blogger.png" : -1 != n.indexOf("blogblog.com/img/openid16-rounded.gif") ? "//2.bp.blogspot.com/-VgnInuIUKBU/UrbzyXTYWRI/AAAAAAAAFmU/3f_Vfj3TI6A/s" + avatarSize + "/openid.png" : -1 != n.indexOf("blogblog.com/img/blank.gif") ? -1 != defaultAvatar.indexOf("gravatar.com") ? defaultAvatar + "&s=" + avatarSize : defaultAvatar : n, 1 == showAvatar && (i = 1 == roundAvatar ? "avatarRound" : "", e += '<div class="avatarImage ' + i + '"><a title="Truy cập đến bình luận đó" href="' + r + '"><img class="' + i + '" src="' + n + '" alt="' + o + '" width="' + avatarSize + '" height="' + avatarSize + '"/></a></div>'), e += '<a style="display:none" href="' + r + '">' + o + "</a>";
+        var A = d.content.$t,
+            v = A.replace(/(<([^>]+)>)/gi, "");
+        "" != v && v.length > characters ? (v = v.substring(0, characters), v += "&hellip;", 1 == showMorelink && (v += '<a href="' + r + '">' + moreLinktext + "</a>")) : v = v, e += "<span>" + v + "</span>", e += "</li>"
+    }
+    e += "</ul>";
+    var c = "";
+    0 == hideCredits && (c = "display:block;"), e += "", document.write(e)
+}
+var numComments = 5,
+    showAvatar = !0,
+    avatarSize = 42,
+    roundAvatar = !0,
+    characters = 30,
+    showMorelink = !1,
+    defaultAvatar = "https://i.imgur.com/32mYSuI.jpg",
+    hideCredits = !0,
+    numComments = numComments || 5,
+    avatarSize = avatarSize || 60,
+    characters = characters || 25,
+    defaultAvatar = defaultAvatar || "https://i.imgur.com/32mYSuI.jpg",
+    moreLinktext = moreLinktext || " More &raquo;",
+    showAvatar = "undefined" == typeof showAvatar ? !0 : showAvatar,
+    showMorelink = "undefined" == typeof showMorelink ? !1 : showMorelink,
+    roundAvatar = "undefined" == typeof roundAvatar ? !0 : roundAvatar,
+    hideCredits = "undefined" == typeof hideCredits ? !1 : roundAvatar;
+//]]>
+</script>
+<script type="text/javascript" src="/feeds/comments/default?alt=json&amp;callback=idbcomments"></script>
+<div class='comment-info2_startinhit'>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+function totalPosts(json){document.getElementById('Stats1_totalPosts').innerHTML=json.feed.openSearch$totalResults.$t};function totalComments(json){document.getElementById('Stats1_totalComments').innerHTML=json.feed.openSearch$totalResults.$t};document.write('<script type=\"text/javascript\" src=\"/feeds/posts/default?alt=json-in-script&max-results=0&callback=totalPosts\"><\/script><script type=\"text/javascript\" src=\"/feeds/comments/default?alt=json-in-script&max-results=0&callback=totalComments\"><\/script>');
+//]]>
+</script>
+
 <meta charset="utf-8">
 <title>Lê Minh Tính - About Me</title>
 
