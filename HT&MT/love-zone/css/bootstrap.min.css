@@ -39,6 +39,12 @@ body {
   border-radius: 10rem;
 }
 
+.dark {
+	width: 70px;
+	margin: auto;
+	height: auto;
+}
+
 .avt {
   width: 160px;
   height: 160px;
