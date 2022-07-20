@@ -1,25 +1,26 @@
-const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
+const yourDate = new Date("2022-06-23T12:00:00"),
+music = ['ido', 'Lemon-Kenshi-Yonezu'];
 
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobile_menu.classList.toggle('active');
-});
+document.addEventListener('DOMContentLoaded', function(){
+      var rootTime = document.querySelector("time");
 
-document.addEventListener('scroll', () => {
-	var scroll_position = window.scrollY;
-	if (scroll_position > 250) {
-		header.style.backgroundColor = '#29323c';
-	} else {
-		header.style.backgroundColor = 'transparent';
-	}
-});
+      document.querySelector("anni").textContent = `${(yourDate.getDate()>9)?yourDate.getDate():"0"+yourDate.getDate()}-${(yourDate.getMonth()>8)?(yourDate.getMonth()+1):"0"+(yourDate.getMonth()+1)}-${yourDate.getFullYear()}`;
+      
+      document.querySelector("date").textContent = Math.floor( Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24)+" DAYS";
 
-menu_item.forEach((item) => {
-	item.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		mobile_menu.classList.toggle('active');
-	});
-});
+      function olock() {
+            var today = new Date(),
+            hrs = (Math.floor( Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
+            min = (Math.floor( Math.floor((today - yourDate) / 1000) / 60)) % 60,
+            sec =  Math.floor((today - yourDate) / 1000) % 60;
+            rootTime.textContent = `${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
+      } olock();
+      var timer = setInterval(function(){olock()}, 1000);
+      document.querySelector("audio").setAttribute("src", `music/${music[Math.floor(Math.random()*music.length)]}.mp3`);
+
+      document.getElementsByTagName("body")[0].insertAdjacentHTML(
+            "beforeend",
+            "<div id='mask'></div>"
+      );
+
+}, false);
