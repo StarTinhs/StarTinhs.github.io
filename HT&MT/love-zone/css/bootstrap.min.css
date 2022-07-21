@@ -67,13 +67,16 @@ body {
 }
 
 #music {
-  grid-column: 2;
+  /*grid-column: 2;
   position: relative;
   z-index: 1000;
   opacity: .4;
   margin: 50px;
-  border-radius: 10%;
-  box-shadow: 0px 0px 8px rgb(222, 104, 186);
+  width-max: 500px;*/
+  grid-column: 2;
+  border-radius: 30px;
+  border-width: 3px;
+  /*box-shadow: 0px 0px 2px rgb(222, 104, 186);*/
 }
 
 #heart {
