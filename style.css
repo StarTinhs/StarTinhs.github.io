@@ -11,6 +11,9 @@ html {
 }
 a {
 	text-decoration: none;
+	grid-column: 2;
+	border-radius: 30px;
+	border-width: 3px;
 }
 .container {
 	min-height: 100vh;

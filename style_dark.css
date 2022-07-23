@@ -18,6 +18,9 @@ html {
 }
 a {
 	text-decoration: none;
+	border-radius: 30px;
+	border-width: 3px;
+	
 }
 .container {
 	min-height: 100vh;
