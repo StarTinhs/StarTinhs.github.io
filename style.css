@@ -27,6 +27,18 @@ img {
 	width: 100%;
 	object-fit: cover;
 }
+
+iframe {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	box-shadow: 6px 6px 20px rgb(150 224 118);
+}
+
+.shadow {
+	box-shadow: 6px 6px 20px rgb(150 224 118);
+}
+
 p {
 	color: black;
 	font-size: 1.4rem;
@@ -51,6 +63,13 @@ p {
 .logo {
 	width: 20px;
 	height: -50px;
+}
+.count {
+	padding: 3x 2px;
+	color: rgb(150 224 118);
+	border-radius: 1.5rem;
+	border: 2px solid rgb(150 224 118);
+	image-rendering:optimizeQuality;
 }
 .cta {
 	display: inline-block;

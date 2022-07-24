@@ -34,6 +34,18 @@ img {
 	width: 100%;
 	object-fit: cover;
 }
+
+iframe {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	box-shadow: 6px 6px 20px rgb(150 224 118);
+}
+
+.shadow {
+	box-shadow: 6px 6px 20px rgb(150 224 118);
+}
+
 p {
 	color: white;
 	font-size: 1.4rem;
